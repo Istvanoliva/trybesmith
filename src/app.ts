@@ -1,9 +1,13 @@
 import express from 'express';
+import router from './routes';
+import errorMiddleware from './middlewares/errorMiddleware';
 
 const app = express();
 
 app.use(express.json());
 
-export default app;
+app.use(router);
 
-// Initial commit
+app.use(errorMiddleware);
+
+export default app;
