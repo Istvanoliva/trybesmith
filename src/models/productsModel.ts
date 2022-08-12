@@ -9,7 +9,7 @@ class ProductModel {
     this.connection = connection;
   }
 
-  async create(product: IProduct): Promise<IProduct> {
+  create = async (product: IProduct): Promise<IProduct> => {
     const { name, amount } = product;
 
     const [{ insertId }] = await this.connection
@@ -17,7 +17,7 @@ class ProductModel {
       
     const result = { id: insertId, ...product };
     return result;
-  }
+  };
 }
 
 export default ProductModel;
