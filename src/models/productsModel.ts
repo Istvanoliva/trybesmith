@@ -18,6 +18,12 @@ class ProductModel {
     const result = { id: insertId, ...product };
     return result;
   };
+
+  getAll = async (): Promise<IProduct[]> => {
+    const [products] = await this.connection
+      .execute(queries.getAll);
+    return products as IProduct[];
+  };
 }
 
 export default ProductModel;
