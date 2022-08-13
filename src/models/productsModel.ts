@@ -13,7 +13,7 @@ class ProductModel {
     const { name, amount } = product;
 
     const [{ insertId }] = await this.connection
-      .execute<ResultSetHeader>(queries.insert, [name, amount]);
+      .execute<ResultSetHeader>(queries.newProduct, [name, amount]);
       
     const result = { id: insertId, ...product };
     return result;
@@ -21,7 +21,7 @@ class ProductModel {
 
   getAll = async (): Promise<IProduct[]> => {
     const [products] = await this.connection
-      .execute(queries.getAll);
+      .execute(queries.getAllProducts);
     return products as IProduct[];
   };
 }
