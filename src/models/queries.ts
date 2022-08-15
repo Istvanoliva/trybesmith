@@ -8,4 +8,5 @@ export default {
   INNER JOIN Trybesmith.Products AS p ON o.id = p.orderId
   GROUP BY o.id
   ORDER BY o.userId ASC`,
+  findUser: 'SELECT * FROM Trybesmith.Users WHERE username = ? AND password = ?',
 };
