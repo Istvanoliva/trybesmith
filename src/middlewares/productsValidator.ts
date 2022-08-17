@@ -23,11 +23,12 @@ class ProductsValidator {
     if (!amount) return res.status(noAmount.status).json({ message: noAmount.message });
     next();
   };
-  
+
   fieldsValidator = (req: Request, res: Response, next: NextFunction) => {
     const { error } = this.schema.validate(req.body);
   
-    if (error && error.details[0].type.includes('string')) {
+    if (error) {
+      error.stack = `${error.details[0].type}`;
       return res.status(422).json({ message: error.message });
     }
     next();
