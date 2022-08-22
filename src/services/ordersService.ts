@@ -13,6 +13,11 @@ class OrdersService {
     const orders = await this.model.getOrders();
     return orders;
   };
+
+  create = async (id: number) => {
+    const orderId = await this.model.create(id);
+    return orderId;
+  };
 }
 
 export default OrdersService;
