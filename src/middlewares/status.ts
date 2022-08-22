@@ -6,6 +6,8 @@ const http = {
   noAmount: { status: 400, message: '"amount" is required' },
   noClass: { status: 400, message: '"classe" is required' },
   noLevel: { status: 400, message: '"level" is required' },
+  noToken: { status: 401, message: 'Token not found' },
+  invalidToken: { status: 401, message: 'Invalid token' },
 };
 
 export default http;
