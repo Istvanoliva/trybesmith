@@ -24,6 +24,12 @@ class ProductModel {
       .execute(queries.getAllProducts);
     return products as IProduct[];
   };
+
+  update = async (productsIds: number[], orderId: number): Promise<void> => {
+    const result = productsIds.map((productId) => this.connection
+      .execute(queries.updateProduct, [orderId, productId]));
+    await Promise.all(result);
+  };
 }
 
 export default ProductModel;
