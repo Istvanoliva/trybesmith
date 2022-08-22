@@ -3,7 +3,7 @@ import { ILogin } from '../interfaces/loginInterface';
 
 import connection from '../models/connection';
 import UsersModel from '../models/usersModels';
-import generateToken from '../jwt/tokenGenerator';
+import { generateToken } from '../jwt/tokenGenerator';
 import http from '../middlewares/status';
 
 class UserService {
