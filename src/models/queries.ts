@@ -9,4 +9,6 @@ export default {
   GROUP BY o.id
   ORDER BY o.userId ASC`,
   findUser: 'SELECT * FROM Trybesmith.Users WHERE username = ? AND password = ?',
+  newOrder: 'INSERT INTO Trybesmith.Orders (userId) VALUES (?)',
+  updateProduct: 'UPDATE Trybesmith.Products SET orderId = ? WHERE id = ?',
 };
